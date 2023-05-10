@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bmi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="bmi-form" action="/" method="post">
+   <h1>BMI calculator</h1> 
+   
+    <p>Your weight</p>
+    <br>
+    <input type="number" name="weight" required>
+    <br>
+    <p>Your height</p>
+    <br>
+    <input type="number" name="height" step="0.01" required>
+    <br>
+    <button type="submit">submit</button>
+    <br>
+    
+   </form>
+   <p>Your BMI is</p>
+   <div id="result"><input type="number" name="bmi"readonly></div>
+</body>
+<script>
+const bmiForm = document.getElementById('bmi-form');
+bmiForm.addEventListener('submit', function (event) {
+    // Prevent default form submission behavior
+    event.preventDefault();
+
+    // Get the weight and height values from the form
+    const weight = parseFloat(bmiForm.elements.weight.value);
+    const height = parseFloat(bmiForm.elements.height.value);
+
+    // Compute the BMI value
+    const bmi = weight / (height * height);
+
+    // Display the BMI value
+    const bmiInput = document.querySelector('#result input[name="bmi"]');
+    bmiInput.value = bmi.toFixed(2);
+});
+
+</script>
+
+</html>

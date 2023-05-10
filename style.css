@@ -1,0 +1,17 @@
+body {
+    background-color: azure; 
+ }
+ 
+ h1 {
+     color: blueviolet;
+ }
+ 
+ p {
+     color: orchid;
+ }
+ 
+ input { 
+     color: rgb(255, 238, 0);
+     background-color: rgb(70, 59, 70);
+ }
+ 
